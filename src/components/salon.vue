@@ -33,10 +33,46 @@ export default defineComponent({
   <div class="services one">
     <p style="font-weight: 200px; font-style:italic; padding:0px">Our Services</p>
     <ul style="font-size: 4.5vh">
-      <li>Haircuts and Styling</li>
-      <li>Manicure and Pedicure</li>
-      <li>Facial Treatments</li>
+      <li class="viewport-adjust">Haircuts and Styling</li>
+      <li class="viewport-adjust">Manicure and Pedicure</li>
+      <li class="viewport-adjust">Facial Treatments</li>
     </ul>
+
+  <div style="background-color:black; padding-top:4vh">
+    <p class="viewport-adjust2" style="color:white">Create a Reservation</p>
+    <form class="viewport-adjust" style="color:white" action="process_form.php" method="POST">
+      <table style="margin-left:5vw">
+        <tr>
+          <td class="viewport-adjust">Name: </td>
+          <td><input name="name" type="text" style="padding:1vh" required></td>
+        </tr>
+        <tr>
+          <td>Phone Number:</td>
+          <td><input name="phone_num" type="phone" style="padding:1vh" required></td>
+        </tr>
+        <tr>
+          <td style="padding-right:2vw"><label>Type of Service:</label></td>
+          <td>
+            <select name="service_type" style="padding:0.5vw; font-size:2vh" required>
+              <option value="haircut">Haircuts and Styling</option>
+              <option value="manicure">Manicure and Pedicure</option>
+              <option value="facial">Facial Treatments</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Date and Time:</label></td>
+          <td><input name="date_time" type="datetime-local" style="font-size:2.5vh" required></td>
+        </tr>
+        <tr>
+          <td><button name="submit" type="submit">Submit</button></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+      </table>
+    </form>
+  </div>
 
     <div style="padding-top:5vh; padding-bottom:5vh">
       <p style="font-size: 3vh; padding-left:3vw">Leave a Review!</p>
@@ -126,5 +162,15 @@ h1{
 .services.two .num{
   font-size:2.5vh;
   position:flex;
+}
+
+.viewport-adjust{ 
+  font-size: clamp(12px, 2vw, 10vw);
+  font-size: clamp(12px, 4vh, 10vw);
+}
+
+.viewport-adjust2{
+  font-size: clamp(12px, 4vw, 10vw);
+  font-size: clamp(12px, 7vh, 10vw);
 }
 </style>
